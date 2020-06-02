@@ -9,9 +9,41 @@
     </div>
 
     <div class="container">
-	  <form action = " " method = "post"> 
-        {% csrf_token %} 
-        {{ form.as_p }}
-        <input type="submit" value="Submit"> 
-    </form>
+	    <form method = "post">
+      {% csrf_token %}
+             <div>
+              {% for message in messages %}
+              <div class="alert alert-danger">
+                <strong>Error!</strong> {{message}}
+              </div>
+              {% endfor %}
+            </div>
+            <div class="form-group">
+              <label for="">First Name</label>
+              <input type="text" name="first_name" id="" class="form-control" placeholder="first name" aria-describedby="helpId">
+            </div>
+            <div class="form-group">
+              <label for="">Last Name</label>
+              <input type="text" name="last_name" id="" class="form-control" placeholder="last name" aria-describedby="helpId">
+            </div>
+			      <div class="form-group">
+              <label for="">Username</label>
+              <input type="text" name="username" id="" class="form-control" placeholder="Username here" aria-describedby="helpId">
+            </div>
+            <div class="form-group">
+              <label for="">Email</label>
+              <input type="email" name="email" id="" class="form-control" placeholder="email" aria-describedby="helpId">
+            </div>
+            <div class="form-group">
+              <label for="">Password</label>
+              <input type="password" name="password1" id="" class="form-control" placeholder="Password here" aria-describedby="helpId">
+            </div>
+            <div class="form-group">
+              <label for="">Confirm Password</label>
+              <input type="password" name="password2" id="" class="form-control" placeholder="Confirm Password here" aria-describedby="helpId">
+            </div>
+            <input type="submit" value="Register" class="btn btn-primary"><br> 
+		</div>
+    </div>
+     
 {% endblock %}

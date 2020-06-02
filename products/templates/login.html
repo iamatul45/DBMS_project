@@ -11,16 +11,22 @@
     <div class="container">
 	    <form method = "post">
       {% csrf_token %}
-			<div class="form-group">
-              <label for="">Username</label>
-              <input type="text" name="username" id="" class="form-control" placeholder="Username here" aria-describedby="helpId">
-              <small id="helpId" class="text-muted">Never share your Login details with anyone!</small>
+            <div>
+              {% for message in messages %}
+              <div class="alert alert-danger">
+                <strong>Error!</strong> {{message}}
+              </div>
+              {% endfor %}
+            </div>
+            <div class="form-group">
+              <label for="">username</label>
+              <input type="text" name="username" id="" class="form-control" placeholder="username" aria-describedby="helpId">
             </div>
             <div class="form-group">
               <label for="">Password</label>
-              <input type="password" name="password" id="" class="form-control" placeholder="Password here" aria-describedby="helpId">
+              <input type="password" name="password" id="" class="form-control" placeholder="password" aria-describedby="helpId">
             </div>
-            <input type="submit" value="Submit"> 
+            <input type="submit" value="Login" class="btn btn-primary"><br> 
             <small id="helpId" class="text-muted">New to The Daily Shop? <a href="/products/register">Register</a></small>
 		</div>
     </div>
