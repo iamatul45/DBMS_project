@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="jumbotron jumbotron-fluid text-center">
+      <div class="container">
+        <h1 class="display-4">Please Register Here</h1>
+        <small class="lead">We never share your any details with anyone!</small>
+      </div>
+    </div>
+
+    <div class="container">
+	  <form action= 'signup' method = 'POST'>
+      {% csrf_token %}
+			<div class="form-group" >
+              <label for="">Name</label>
+              <input type="text" name="name" id="" class="form-control" placeholder="Name here" aria-describedby="helpId">
+            </div>
+            <div class="form-group">
+              <label for="">Email</label>
+              <input type="email" name="email" id="" class="form-control" placeholder="Email here" aria-describedby="helpId">
+            </div>
+            <div class="form-group">
+              <label for="">Password</label>
+              <input type="password" name="password1" id="" class="form-control" placeholder="Password here" aria-describedby="helpId">
+            </div>
+            <div class="form-group">
+              <label for="">Confirm Password</label>
+              <input type="password" name="password2" id="" class="form-control" placeholder="Confirm Password here" aria-describedby="helpId">
+            </div>
+            <a name="" id="" class="btn btn-primary" href="/" role="button">Register</a>
+		  </div>
+    </form>
+{% endblock %}

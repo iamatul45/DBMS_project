@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="jumbotron jumbotron-fluid text-center">
+      <div class="container">
+        <h1 class="display-4">Please Login Here</h1>
+        <small class="lead">We never share your any details with anyone!</small>
+      </div>
+    </div>
+
+    <div class="container">
+	    <form method = "post">
+      {% csrf_token %}
+			<div class="form-group">
+              <label for="">Username</label>
+              <input type="text" name="username" id="" class="form-control" placeholder="Username here" aria-describedby="helpId">
+              <small id="helpId" class="text-muted">Never share your Login details with anyone!</small>
+            </div>
+            <div class="form-group">
+              <label for="">Password</label>
+              <input type="password" name="password" id="" class="form-control" placeholder="Password here" aria-describedby="helpId">
+            </div>
+            <input type="submit" value="Submit"> 
+            <small id="helpId" class="text-muted">New to The Daily Shop? <a href="/products/register">Register</a></small>
+		</div>
+    </div>
+{% endblock %}
