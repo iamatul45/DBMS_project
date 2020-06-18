@@ -15,10 +15,14 @@
 					<div class="card" style="">
                         <div style="background: #020202 url({{ product.image_url }}); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; height: 250px;"></div>
 						<div class="card-body">
-							<h5 class="card-title">{{ product.name }} - <strong>${{ product.price }}</strong></h5>
+							<h5 class="card-title">{{ product.name }} - <strong>Rs.{{ product.price }}</strong></h5>
 							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the
 								card's content.</p>
-							<a href="#" class="btn btn-primary">Add to cart</a>
+							{% if product.id in app %}
+							<a href="" class="btn btn-danger">Added to Cart</a>
+							{% else %}
+							<a href="add/{{product.id}}" class="btn btn-primary">Add to Cart</a>
+							{% endif %}
 						</div>
 					</div>
 				</div>
@@ -26,3 +30,4 @@
 		</div>
     </div>
 {% endblock %}
+

@@ -6,13 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Shop Now</title>
+    <style>
+      body{
+        overflow-x: hidden;
+      }
+      .navbar-brand{
+        font-family: 'Lobster', cursive;
+        font-size: 30px;
+      }
+      .nav-link{
+        font-family: 'Lobster Two', cursive;
+      }
+      .card-body{
+        background-color:rgb(233,236,239);
+      }
+      .card-title,.card-text{
+        color: black;
+      }
+      h1,h2,h3,h4,h5,h6{
+        font-family: 'Berkshire Swash', cursive;
+      }
+    </style>
   </head>
   <body style="background: #fdfdfd;">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">The Daily Shop</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+      <a class="navbar-brand" href="/" style="color: rgb(184, 15, 15);">The Daily Shop</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -20,28 +44,28 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/"> <i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/products">Products</a>
+            <a class="nav-link" href="/products"> <i class="fa fa-shopping-basket" aria-hidden="true"></i> Products</a>
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="/products/profile">Hi,{{user.first_name}}</a>
+            <a class="nav-link" href="/products/profile"> <i class="fa fa-user" aria-hidden="true"></i> Hi,{{user.first_name}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/products/cart">Cart <span class="label label-danger">0</span></a>
+            <a class="nav-link" href="/products/cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-danger">{{total_count}}</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/products/logout">Logout</a>
+            <a class="nav-link" href="/products/logout"> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
           </li>
           
           {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="/products/register">Register</a>
+            <a class="nav-link" href="/products/register"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/products/login">Login</a>
+            <a class="nav-link" href="/products/login"> <i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
           </li>
           {% endif %}
         </ul>
@@ -58,15 +82,19 @@
         {% endblock %}
     </main>
 
-    <footer class="text-muted">
-      <div class="container">
-        <p class="float-right">
-          <a href="#">Back to top</a>
-        </p>
-        <p>The Daily Shop © <strong><a href=#></a>All Rights reserved</strong></p>
-<!--        <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.3/getting-started/introduction/">getting started guide</a>.</p>-->
+    <center><footer class="bg-light">
+      <div class="icon-container">
+        <i class="fa fa-facebook-square" style="font-size:36px" onMouseOver="this.style.color='#3b5998'" onMouseOut="this.style.color='black'" aria-hidden="true"></i>
+        <i class="fa fa-linkedin-square" style="font-size:36px" onMouseOver="this.style.color='#0e76a8'" onMouseOut="this.style.color='black'" aria-hidden="true"></i>
+        <i class="fa fa-youtube-square" style="font-size:36px" onMouseOver="this.style.color=' #c4302b'" onMouseOut="this.style.color='black'" aria-hidden="true"></i>
+        <i class="fa fa-github-square" style="font-size:36px" onMouseOver="this.style.color='black'" onMouseOut="this.style.color='black'" aria-hidden="true"></i>
       </div>
-    </footer>
+    </footer></center>
+    <center><p><strong>The Daily Shop © 2020, <a href=#></a> All Rights reserved</strong></p></center>
+        
+        
+<!--        <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.3/getting-started/introduction/">getting started guide</a>.</p>-->
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

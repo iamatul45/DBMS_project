@@ -3,11 +3,18 @@
 {% block content %}
     <div class="jumbotron jumbotron-fluid text-center">
       <div class="container">
-        <h1 class="display-4">Hello, {{user.name}}</h1>
-        <small class="lead">profile</small>
+        <h1 class="display-4">Your Profile</h1>
       </div>
-      <h1 class="display-4"> {{user.name}}</h1>
-      <h1 class="display-4"> {{user.email}}</h1>
+    </div>
+    <div class="container">
+      <div class="card text-center">
+        <div class="card-body">
+          <h4 class="card-title"> <i class="fa fa-user" aria-hidden="true"></i> Name : {{user.first_name}} {{user.last_name}}</h4>
+          <h4 class="card-title"> <i class="fa fa-envelope" aria-hidden="true"></i> Email : {{user.email}}</h4>
+          <h4 class="card-title"> <i class="fa fa-at" aria-hidden="true"></i> username : {{user.username}}</h4>
+          <h4 class="card-title"> <i class="fa fa-sign-in" aria-hidden="true"></i> Last Activity : {{user.last_login}}</h4>
+        </div>
+      </div>
     </div>
 
     
