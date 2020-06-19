@@ -2,8 +2,7 @@
 * Atul Kailas Patil 181CO112
 * Yash Kumar 181CO112
 # DBMS_project
-DBMS project using django
-languages used :
+Technologies used :
 * 1.HTML
 * 2.CSS
 * 3.Bootstrap 4
