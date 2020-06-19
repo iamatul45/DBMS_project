@@ -68,7 +68,8 @@ def register(request):
 def cart(request):
     return view_cart(request)
 
-
+def about(request):
+    return render(request,'about.html')
 
 def profile(request):
     total_count = get_cart_count(request)
